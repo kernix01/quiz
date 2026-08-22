@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Интерактивный квиз по основам frontend-разработки">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Quiz</title>
+</head>
+<body>
+  <main class="quiz-layout">
+    <section class="quiz-panel" aria-labelledby="quiz-title">
+      <header class="quiz-header">
+        <div>
+          <p class="eyebrow">Практика JavaScript</p>
+          <h1 id="quiz-title">Frontend Quiz</h1>
+        </div>
+
+        <div class="score" aria-live="polite">
+          <span>Счёт</span>
+          <strong id="score">0</strong>
+        </div>
+      </header>
+
+      <div class="progress-block">
+        <div class="progress-info">
+          <span id="quiz-progress">Вопрос 1 из 5</span>
+          <span id="progress-percent">20%</span>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-value" id="progress-value"></div>
+        </div>
+      </div>
+
+      <section class="question-card" id="question-screen">
+        <p class="question-number" id="question-number">Вопрос 01</p>
+        <h2 id="question-text">Какой метод находит первый элемент по CSS-селектору?</h2>
+
+        <div class="answers" id="answers">
+          <button class="answer-option" type="button" data-index="0">
+            <span class="answer-key">A</span>
+            <span class="answer-text">querySelector()</span>
+          </button>
+          <button class="answer-option" type="button" data-index="1">
+            <span class="answer-key">B</span>
+            <span class="answer-text">createElement()</span>
+          </button>
+          <button class="answer-option" type="button" data-index="2">
+            <span class="answer-key">C</span>
+            <span class="answer-text">addEventListener()</span>
+          </button>
+          <button class="answer-option" type="button" data-index="3">
+            <span class="answer-key">D</span>
+            <span class="answer-text">append()</span>
+          </button>
+        </div>
+
+        <p class="feedback" id="feedback" aria-live="polite" hidden></p>
+
+        <footer class="question-footer">
+          <p>Выбери один вариант ответа</p>
+          <button class="primary-button" id="next-button" type="button" disabled>
+            Следующий вопрос
+          </button>
+        </footer>
+      </section>
+
+      <section class="result-card" id="result-screen" aria-live="polite" hidden>
+        <p class="eyebrow">Квиз завершён</p>
+        <h2>Твой результат</h2>
+        <p class="result-score"><strong id="final-score">0</strong><span>/ 5</span></p>
+        <p id="result-message">Пройди квиз и проверь, что уже закрепилось.</p>
+        <button class="primary-button" id="restart-button" type="button">
+          Пройти ещё раз
+        </button>
+      </section>
+    </section>
+
+    <aside class="quiz-note">
+      <p class="eyebrow">Как проходить</p>
+      <h2>Не торопись с ответом</h2>
+      <p>Сначала объясни выбор своими словами, затем нажми на вариант.</p>
+      <ul>
+        <li>Один ответ на вопрос</li>
+        <li>Результат в конце</li>
+        <li>Повтор без штрафа</li>
+      </ul>
+    </aside>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
